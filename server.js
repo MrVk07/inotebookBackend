@@ -5,13 +5,13 @@ var cors = require('cors')
 const dotenv = require('dotenv')
 const auth = require('./routes/auth')
 const notes = require('./routes/notes')
-connectToMongo();
 
 const app = express()
 const port = process.env.PORT || 5000
 
 app.use(cors())
 dotenv.config()
+connectToMongo();
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
